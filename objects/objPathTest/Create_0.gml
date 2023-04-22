@@ -40,14 +40,10 @@ for (var _level = 0; _level < hierarchy_levels; _level ++){
 						for (var _check_x = _check_y = _end_y ? _start_x : _end_x; _check_x <= _end_x; _check_x ++){
 						    if (_check_x == _end_x || _check_y == _end_y){
 								var _tile = tilemap_get(_map_id, _check_x, _check_y); 
-								if (_node_xx == 39 && _node_yy == 40){
-									show_debug_message("_check_x: " + string(_check_x) + " | _check_y: " + string(_check_y) + " _tile: " + string(_tile))	
-								}
 								
 								if (_tile == 1){
 									_check_y = _end_y + 1;
 									_check_x = _end_x + 1;
-									show_debug_message("Level: " + string(_level) + " | _size: " + string(_size) + " | _node x/y: " + string(_node_xx) + "," + string(_node_yy));
 								}else{
 									if (_check_x == _end_x && _check_y == _end_y){
 										_size ++;
@@ -68,7 +64,7 @@ for (var _level = 0; _level < hierarchy_levels; _level ++){
 						}
 					}
 					
-					all_nodes[_node_xx][_node_yy].hierarchy_data[_level].clearance = _size; show_debug_message("all_nodes[_node_xx][_node_yy].hierarchy_data[_level].clearance: " + string(all_nodes[_node_xx][_node_yy].hierarchy_data[_level].clearance))
+					all_nodes[_node_xx][_node_yy].hierarchy_data[_level].clearance = _size;
 					
 					//Add possible entrance nodes to be checked later
 					if ( (tilemap_get(_map_id, _node_xx, _node_yy) != 1) && ( 

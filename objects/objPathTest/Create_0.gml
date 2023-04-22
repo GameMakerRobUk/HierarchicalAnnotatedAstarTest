@@ -36,8 +36,6 @@ for (var _level = 0; _level < hierarchy_levels; _level ++){
 					var _end_x = _node_xx;
 					var _end_y = _node_yy;
 			
-					//for (var _check_y = _start_y; _check_y <= _end_y; _check_y ++){
-					//	for (var _check_x = _start_x; _check_x <= _end_x; _check_x ++){
 					for (var _check_y = _start_y; _check_y <= _end_y; _check_y ++){
 						for (var _check_x = _check_y = _end_y ? _start_x : _end_x; _check_x <= _end_x; _check_x ++){
 						    if (_check_x == _end_x || _check_y == _end_y){
@@ -56,8 +54,13 @@ for (var _level = 0; _level < hierarchy_levels; _level ++){
 										if (_size < _nodes_per_cluster){
 											_end_x ++;
 											_end_y ++;
-											_check_x = _start_x;
-											_check_y = _start_y;
+											if (_end_x * CELL_SIZE >= room_width || _end_y * CELL_SIZE >= room_height){
+												_check_y = _end_y + 1;
+												_check_x = _end_x + 1;
+											}else{
+												_check_x = _start_x;
+												_check_y = _start_y;
+											}
 										}
 									}
 								}

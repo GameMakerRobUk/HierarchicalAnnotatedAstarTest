@@ -43,3 +43,5 @@ for (var yy = 0; yy < ceil(VCELLS div _nodes_per_cluster); yy ++){
 		draw_line(_x1, _y1, _x1, _y2);
 	}
 }
+
+draw_text(mouse_x, mouse_y, string(mouse_x div CELL_SIZE) + "," + string(mouse_y div CELL_SIZE));

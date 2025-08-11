@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"draw_to_surface","order":1,"path":"scripts/draw_to_surface/draw_to_surface.yy",},
+    {"name":"loop_current_hierarchy_level","order":2,"path":"scripts/loop_current_hierarchy_level/loop_current_hierarchy_level.yy",},
+  ],
 }

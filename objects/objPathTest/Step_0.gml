@@ -5,11 +5,19 @@ camera_set_view_pos(view_camera[0], cx, cy);
 
 
 //Change Hierarchy level
-if (keyboard_check_pressed(vk_up)) current_hierarchy_level ++;
-if (keyboard_check_pressed(vk_down)) current_hierarchy_level --;
+if (keyboard_check_pressed(vk_up)){
+	current_hierarchy_level ++;
+	loop_current_hierarchy_level();
+	draw_to_surface();
+}
+if (keyboard_check_pressed(vk_down)){
+	current_hierarchy_level --;
+	loop_current_hierarchy_level();
+	draw_to_surface();
+}
 
-if (current_hierarchy_level < 0) current_hierarchy_level = hierarchy_levels - 1;
-if (current_hierarchy_level >= hierarchy_levels) current_hierarchy_level = 0;
-
-if (keyboard_check_pressed(vk_tab)) things_to_show ++;
-if (things_to_show == e_things_to_show.last) things_to_show = 0;
+if (keyboard_check_pressed(vk_tab)){
+	things_to_show ++;
+	if (things_to_show == e_things_to_show.last) things_to_show = 0;
+	draw_to_surface();	
+}

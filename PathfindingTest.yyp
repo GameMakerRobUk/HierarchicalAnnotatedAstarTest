@@ -38,6 +38,8 @@
     {"id":{"name":"objPathTest","path":"objects/objPathTest/objPathTest.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"array_find_index","path":"scripts/array_find_index/array_find_index.yy",},},
+    {"id":{"name":"draw_to_surface","path":"scripts/draw_to_surface/draw_to_surface.yy",},},
+    {"id":{"name":"loop_current_hierarchy_level","path":"scripts/loop_current_hierarchy_level/loop_current_hierarchy_level.yy",},},
     {"id":{"name":"sprTest","path":"sprites/sprTest/sprTest.yy",},},
     {"id":{"name":"tsTest","path":"tilesets/tsTest/tsTest.yy",},},
   ],

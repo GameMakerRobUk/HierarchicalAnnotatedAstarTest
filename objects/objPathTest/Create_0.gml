@@ -25,7 +25,7 @@ for (var _level = 0; _level < hierarchy_levels; _level ++){
 		for (var xx = 0; xx < HCELLS; xx += _nodes_per_cluster){
 			_current_level.nodes[xx div _nodes_per_cluster][yy div _nodes_per_cluster] =  {cell_x : xx, cell_y : yy, x : xx * CELL_SIZE, y : yy * CELL_SIZE}
 			
-			#region Calculate clearance for this cluster
+			#region Calculate clearance for this cluster (Clearance is the nodes distance from nearest obstacle)
 			
 			for (var _node_yy = yy; _node_yy < yy + _nodes_per_cluster; _node_yy ++){
 				for (var _node_xx = xx; _node_xx < xx + _nodes_per_cluster; _node_xx ++){
@@ -108,3 +108,4 @@ current_hierarchy_level = 0;
 
 enum e_things_to_show {entrances_and_clearance, entrances_only, clearance_only, last}
 things_to_show = e_things_to_show.entrances_and_clearance;
+surf_battle_map = -1;

@@ -35,7 +35,12 @@
   "name":"PathfindingTest",
   "resources":[
     {"id":{"name":"fnt_8","path":"fonts/fnt_8/fnt_8.yy",},},
+    {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},},
+    {"id":{"name":"objHPA","path":"objects/objHPA/objHPA.yy",},},
     {"id":{"name":"objPathTest","path":"objects/objPathTest/objPathTest.yy",},},
+    {"id":{"name":"Room1_1","path":"rooms/Room1_1/Room1_1.yy",},},
+    {"id":{"name":"Room1_2","path":"rooms/Room1_2/Room1_2.yy",},},
+    {"id":{"name":"Room1_3","path":"rooms/Room1_3/Room1_3.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"array_find_index","path":"scripts/array_find_index/array_find_index.yy",},},
     {"id":{"name":"draw_to_surface","path":"scripts/draw_to_surface/draw_to_surface.yy",},},
@@ -47,6 +52,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Room1_2","path":"rooms/Room1_2/Room1_2.yy",},},
+    {"roomId":{"name":"Room1_3","path":"rooms/Room1_3/Room1_3.yy",},},
+    {"roomId":{"name":"Room1_1","path":"rooms/Room1_1/Room1_1.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

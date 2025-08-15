@@ -1,6 +1,11 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"objCamera","order":2,"path":"objects/objCamera/objCamera.yy",},
+    {"name":"objHPA","order":1,"path":"objects/objHPA/objHPA.yy",},
+    {"name":"Room1_1","order":1,"path":"rooms/Room1_1/Room1_1.yy",},
+    {"name":"Room1_2","order":2,"path":"rooms/Room1_2/Room1_2.yy",},
+    {"name":"Room1_3","order":3,"path":"rooms/Room1_3/Room1_3.yy",},
     {"name":"draw_to_surface","order":1,"path":"scripts/draw_to_surface/draw_to_surface.yy",},
     {"name":"loop_current_hierarchy_level","order":2,"path":"scripts/loop_current_hierarchy_level/loop_current_hierarchy_level.yy",},
   ],

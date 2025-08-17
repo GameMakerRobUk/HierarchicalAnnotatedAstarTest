@@ -601,20 +601,21 @@ function get_node_tile_xy(_node_id, _temp_start_node, _temp_goal_node) {
 }
 
 /// refine abstract node path into a tile-by-tile path
+
+// helper to append segment and avoid duplicating first tile
+function append_segment(_tile_path, _seg_tiles) {
+    if (array_length(_seg_tiles) == 0) return;
+    if (array_length(_tile_path) == 0) {
+        for (var _i = 0; _i < array_length(_seg_tiles); _i++) array_push(_tile_path, _seg_tiles[_i]);
+    } else {
+        for (var _i = 1; _i < array_length(_seg_tiles); _i++) array_push(_tile_path, _seg_tiles[_i]);
+    }
+}
+
 function refine_abstract_path_to_tiles(_path_node_ids, _level_index, _temp_edges_by_from, _temp_start_node, _temp_goal_node) {
     var _tile_path = [];
 
     var _intra_lookup = build_intra_edge_lookup_map(_level_index);
-
-    // helper to append segment and avoid duplicating first tile
-    function _append_segment(_seg_tiles) {
-        if (array_length(_seg_tiles) == 0) return;
-        if (array_length(_tile_path) == 0) {
-            for (var _i = 0; _i < array_length(_seg_tiles); _i++) array_push(_tile_path, _seg_tiles[_i]);
-        } else {
-            for (var _i = 1; _i < array_length(_seg_tiles); _i++) array_push(_tile_path, _seg_tiles[_i]);
-        }
-    }
 
     for (var _i = 0; _i < (array_length(_path_node_ids) - 1); _i++) {
         var _from_id = _path_node_ids[_i];
@@ -631,7 +632,7 @@ function refine_abstract_path_to_tiles(_path_node_ids, _level_index, _temp_edges
             for (var _t = 0; _t < array_length(_arr); _t++) {
                 var _e = _arr[_t];
                 if (_e.to_node_id == _to_id) {
-                    _append_segment(_e.stored_tile_path);
+                    append_segment(_tile_path, _e.stored_tile_path);
                     _segment_found = true;
                     break;
                 }
@@ -642,7 +643,7 @@ function refine_abstract_path_to_tiles(_path_node_ids, _level_index, _temp_edges
         // 2) intra edge?
         if (ds_map_exists(_intra_lookup, _key_intra)) {
             var _stored = ds_map_find_value(_intra_lookup, _key_intra);
-            _append_segment(_stored);
+            append_segment(_tile_path, _stored);
             _segment_found = true;
             continue;
         }
@@ -655,7 +656,7 @@ function refine_abstract_path_to_tiles(_path_node_ids, _level_index, _temp_edges
 
         if (((abs(_dx) + abs(_dy)) == 1)) {
             var _seg = [ { x: _from_xy.x, y: _from_xy.y }, { x: _to_xy.x, y: _to_xy.y } ];
-            _append_segment(_seg);
+            append_segment(_tile_path, _seg);
             _segment_found = true;
         }
 
@@ -709,5 +710,6 @@ hpa_build_all_levels();
 #region Debug
 
 surf_hpa = -1;
+state = 0;
 
 #endregion

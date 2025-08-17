@@ -51,3 +51,17 @@ if (!surface_exists(surf_hpa)){
 }
 
 draw_surface(surf_hpa, 0, 0);
+
+//var _cluster = get_cluster_for_tile(mouse_x div CLUSTER_SIZE, mouse_y div CLUSTER_SIZE, 0);
+////show_debug_message("_cluster: " + string(_cluster));
+//draw_set_halign(fa_right);
+//draw_set_valign(fa_top);
+//draw_text(mouse_x, mouse_y, string(_cluster.cluster_id));
+
+if (state == 2){
+	//found: (array_length(_tile_path) > 0), tile_path: _tile_path
+	//show_debug_message("result: " + string(result))
+	for (var i = 0; i < array_length(result.tile_path); i ++){
+		draw_circle(result.tile_path[i].x * TILE_SIZE_PIXELS, result.tile_path[i].y * TILE_SIZE_PIXELS, 5, true); 	
+	}
+}
